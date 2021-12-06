@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<flow name="1.project_zeroFlow" doc:id="f579748c-ec33-4eea-a74b-5869fa40b566" >
+		<http:listener doc:name="Listener" doc:id="6f72003d-56c4-491f-8243-5bb236fb7e4f" allowedMethods="GET" path="/project-zero">
+			<http:response>
+				<http:body ><![CDATA[payload]]></http:body>
+			</http:response>
+		</http:listener>
+		<logger level="INFO" doc:name="Logger" doc:id="f8c0d9ee-d857-486f-a666-635d4dd77ca9" message='"Start the application"'/>
+		<set-payload value='#["Hello Farmalisto"]' doc:name="Set Payload" doc:id="154ba852-61f5-4eef-b2d2-a60c29c69493" />
+	</flow>
+</mule>
